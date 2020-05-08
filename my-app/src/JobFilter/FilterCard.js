@@ -14,14 +14,14 @@ const FilterCard = (props) => {
     setJobs(prevState => {
       // however, when logging prevState, the object.selected should not be true, since its actually false...
         console.log("prevState", prevState);
-        prevState.map(item => {
+        let updatedItems = prevState.map(item => {
           if(item.id === event.target.id) {
             item.selected = event.target.checked;
             return item;
           }
           return item;
         })
-        return prevState;
+        return updatedItems;
     })
   }
 
